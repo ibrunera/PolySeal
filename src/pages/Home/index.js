@@ -1,47 +1,66 @@
-import React from 'react';
-import { View, Image, Text } from 'react-native';
+import React from "react";
+import { FlatList, ScrollView, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-import homeImg from '../../assets/home.png'
-import produtosImg from '../../assets/produtos.png'
-import contatosImg from '../../assets/contato.png'
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Icon from "../../components/Icon";
 
-import Header from '../../components/Header'
-import Icon from '../../components/Icon'
+import styles from "./style";
 
-import styles from './style'
+import homeImg from "../../assets/home.png";
+import produtosImg from "../../assets/produtos.png";
+import contatosImg from "../../assets/contato.png";
 
-export default function Home(){
-    return (
+const listIcons = [
+  {
+    id: 1,
+    name: "A Empresa",
+    img: homeImg,
+  },
+  {
+    id: 2,
+    name: "Produtos",
+    img: produtosImg,
+  },
+  {
+    id: 3,
+    name: "Contato",
+    img: contatosImg,
+  },
+  {
+    id: 4,
+    name: "Teste",
+    img: contatosImg,
+  },
+];
 
-        <View style={styles.container}>
+export default function Home() {
+  const navigation = useNavigation();
 
-            <Header/> 
+  function navigateTo(icon) {
+    navigation.navigate(icon.name);
+  }
 
-            <View style={styles.body}>
+  const renderIcon = ({ item }) => (
+    <Icon name={item.name} img={item.img} nav={() => navigateTo(item)} />
+  );
 
-                <Icon />
+  return (
+    <View style={styles.container}>
+      <Header />
 
-                <View style={styles.button}>
-                    <View style={styles.imgButton}>
-                        <Image source={produtosImg}/>
-                    </View>
-                    <Text style={styles.txtButton}>
-                        Produtos
-                    </Text>
-                </View>
+      <ScrollView contentContainerStyle={styles.body}>
+        <FlatList
+          data={listIcons}
+          keyExtractor={(icon) => String(icon.id)}
+          renderItem={renderIcon}
+          contentContainerStyle={styles.list}
+          numColumns={3}
+        />
+      </ScrollView>
 
-                <View style={styles.button}>
-                    <View style={styles.imgButton}>
-                        <Image source={contatosImg}/>
-                    </View>
-                    <Text style={styles.txtButton}>
-                        Contato
-                    </Text>
-                </View>
-
-            </View>
-            
-        
-        </View>
-    )
+      <Footer />
+    </View>
+  );
 }
