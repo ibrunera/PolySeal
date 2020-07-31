@@ -8,7 +8,8 @@ export default StyleSheet.create({
     height: 90,
     backgroundColor: "#C2FAFE",
     borderColor: "#00A0FB",
-    borderWidth: 1,
+    borderWidth: 0.2,
+    paddingRight: 12,
   },
   image: {
     width: 70,

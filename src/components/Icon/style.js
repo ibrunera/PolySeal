@@ -4,6 +4,7 @@ export default StyleSheet.create({
   button: {
     paddingTop: 10,
     alignItems: "center",
+    paddingHorizontal: "4%",
   },
   imgButton: {
     backgroundColor: "#C4C4C4",

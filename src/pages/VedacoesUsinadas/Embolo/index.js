@@ -2,46 +2,45 @@ import React from "react";
 import { View, ScrollView, FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import Item from "../../components/Item";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
+import Item from "../../../components/Item";
 
 import styles from "./style";
 
-import produtosImg from "../../assets/produtos.png";
+import produtosImg from "../../../assets/produtos.png";
 
-const listProdutos = [
+const listEmbolo = [
   {
     id: 1,
     img: produtosImg,
-    txt: "Vedações Usinadas",
-    name: "VedacoesUsinadas",
+    txt: "K01-P",
+    name: "K01P",
   },
   {
     id: 2,
     img: produtosImg,
-    txt: "Vedações Padronizadas",
-    name: "VedacoesPadronizadas",
+    txt: "K02-P",
+    name: "K02P",
   },
 ];
 
-export default function Produtos() {
+export default function Embolo() {
   const navigation = useNavigation();
 
-  function navigateTo(produto) {
-    navigation.navigate(produto.name);
+  function navigateTo(item) {
+    navigation.navigate(item.name);
   }
 
   const renderItem = ({ item }) => (
     <Item img={item.img} txt={item.txt} nav={() => navigateTo(item)} />
   );
-
   return (
     <View style={styles.container}>
       <Header />
       <ScrollView contentContainerStyle={styles.body}>
         <FlatList
-          data={listProdutos}
+          data={listEmbolo}
           keyExtractor={(item) => String(item.id)}
           renderItem={renderItem}
           contentContainerStyle={styles.list}

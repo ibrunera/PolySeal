@@ -7,6 +7,8 @@ const AppStack = createStackNavigator();
 import Home from "./pages/Home";
 import Produtos from "./pages/Produtos";
 import Empresa from "./pages/Empresa";
+import VedacoesUsinadas from "./pages/VedacoesUsinadas";
+import Embolo from "./pages/VedacoesUsinadas/Embolo";
 
 export default function Routes() {
   return (
@@ -15,6 +17,8 @@ export default function Routes() {
         <AppStack.Screen name="Home" component={Home} />
         <AppStack.Screen name="A Empresa" component={Empresa} />
         <AppStack.Screen name="Produtos" component={Produtos} />
+        <AppStack.Screen name="VedacoesUsinadas" component={VedacoesUsinadas} />
+        <AppStack.Screen name="Embolo" component={Embolo} />
       </AppStack.Navigator>
     </NavigationContainer>
   );

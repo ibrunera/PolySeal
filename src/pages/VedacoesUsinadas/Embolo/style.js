@@ -8,9 +8,5 @@ export default StyleSheet.create({
   },
   body: {
     flex: 1,
-    padding: 10,
-  },
-  list: {
-    flex: 1,
   },
 });
