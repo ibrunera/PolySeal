@@ -1,11 +1,31 @@
-import { StyleSheet } from "react-native";
-import Constants from "expo-constants";
+import { StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
 
 export default StyleSheet.create({
   footer: {
-    backgroundColor: "#C4C4C4",
-    paddingHorizontal: 24,
-    paddingTop: 25,
-    height: 107,
+    backgroundColor: 'red',
+    flexDirection: 'row',
+    height: 130,
+    borderTopWidth: 2.5,
+    justifyContent: 'center',
+  },
+  footerTextBox: {
+    paddingTop: 10,
+    alignItems: 'center',
+    width: '40%',
+  },
+  footerText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  footerImg: {
+    height: '80%',
+    resizeMode: 'contain',
+    width: '25%',
+  },
+  footerImgRina: {
+    height: '100%',
+    resizeMode: 'contain',
+    width: '25%',
   },
 });

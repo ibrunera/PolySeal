@@ -1,27 +1,27 @@
-import React from "react";
-import { View, ScrollView, FlatList } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React from 'react';
+import { View, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import Item from "../../components/Item";
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Item from '../../components/Item';
 
-import styles from "./style";
+import styles from './style';
 
-import produtosImg from "../../assets/produtos.png";
+import produtosImg from '../../assets/produtos.png';
 
 const listProdutos = [
   {
     id: 1,
     img: produtosImg,
-    txt: "Vedações Usinadas",
-    name: "VedacoesUsinadas",
+    txt: 'Vedações Usinadas',
+    name: 'VedacoesUsinadas',
   },
   {
     id: 2,
     img: produtosImg,
-    txt: "Vedações Padronizadas",
-    name: "VedacoesPadronizadas",
+    txt: 'Vedações Padronizadas',
+    name: 'VedacoesPadronizadas',
   },
 ];
 
@@ -39,14 +39,13 @@ export default function Produtos() {
   return (
     <View style={styles.container}>
       <Header />
-      <ScrollView contentContainerStyle={styles.body}>
+      <View style={styles.body}>
         <FlatList
           data={listProdutos}
           keyExtractor={(item) => String(item.id)}
           renderItem={renderItem}
-          contentContainerStyle={styles.list}
         />
-      </ScrollView>
+      </View>
       <Footer />
     </View>
   );

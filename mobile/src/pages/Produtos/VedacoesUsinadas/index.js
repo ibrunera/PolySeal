@@ -1,51 +1,51 @@
-import React from "react";
-import { View, ScrollView, FlatList } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React from 'react';
+import { View, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import Item from "../../components/Item";
+import Header from '../../../components/Header';
+import Footer from '../../../components/Footer';
+import Item from '../../../components/Item';
 
-import styles from "./style";
+import styles from './style';
 
-import produtosImg from "../../assets/produtos.png";
+import produtosImg from '../../../assets/produtos.png';
 
 const listUsinadas = [
   {
     id: 1,
     img: produtosImg,
-    txt: "Vedação para Êmbolo",
-    name: "Embolo",
+    txt: 'Vedação para Êmbolo',
+    name: 'Embolo',
   },
   {
     id: 2,
     img: produtosImg,
-    txt: "Vedação para Haste",
-    name: "Haste",
+    txt: 'Vedação para Haste',
+    name: 'Haste',
   },
   {
     id: 3,
     img: produtosImg,
-    txt: "Raspadores",
-    name: "Raspadores",
+    txt: 'Raspadores',
+    name: 'Raspadores',
   },
   {
     id: 4,
     img: produtosImg,
-    txt: "Rotativos",
-    name: "Rotativos",
+    txt: 'Rotativos',
+    name: 'Rotativos',
   },
   {
     id: 5,
     img: produtosImg,
-    txt: "Anéis Guia / Apoio",
-    name: "Guia",
+    txt: 'Anéis Guia / Apoio',
+    name: 'Guia',
   },
   {
     id: 6,
     img: produtosImg,
-    txt: "Anéis Estáticos",
-    name: "Estaticos",
+    txt: 'Anéis Estáticos',
+    name: 'Estaticos',
   },
 ];
 
@@ -62,14 +62,14 @@ export default function VedacoesUsinadas() {
   return (
     <View style={styles.container}>
       <Header />
-      <ScrollView contentContainerStyle={styles.body}>
+      <View style={styles.body}>
         <FlatList
           data={listUsinadas}
           keyExtractor={(item) => String(item.id)}
           renderItem={renderItem}
           contentContainerStyle={styles.list}
         />
-      </ScrollView>
+      </View>
       <Footer />
     </View>
   );
