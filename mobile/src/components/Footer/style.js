@@ -5,8 +5,8 @@ export default StyleSheet.create({
   footer: {
     backgroundColor: 'red',
     flexDirection: 'row',
-    height: 130,
-    borderTopWidth: 2.5,
+    height: 100,
+    borderTopWidth: 1,
     justifyContent: 'center',
   },
   footerTextBox: {
@@ -17,6 +17,7 @@ export default StyleSheet.create({
   footerText: {
     color: 'white',
     fontWeight: 'bold',
+    fontSize: 11,
   },
   footerImg: {
     height: '80%',

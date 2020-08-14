@@ -33,6 +33,32 @@ const listIcons = [
     name: 'Teste',
     img: contatosImg,
   },
+  {
+    id: 5,
+    name: 'Teste',
+    img: contatosImg,
+  },
+  {
+    id: 6,
+    name: 'Teste',
+    img: contatosImg,
+  },
+
+  {
+    id: 7,
+    name: 'Teste',
+    img: contatosImg,
+  },
+  {
+    id: 8,
+    name: 'Teste',
+    img: contatosImg,
+  },
+  {
+    id: 9,
+    name: 'Teste',
+    img: contatosImg,
+  },
 ];
 
 export default function Home() {

@@ -3,14 +3,14 @@ import Constants from 'expo-constants';
 
 export default StyleSheet.create({
   header: {
-    height: 145,
-    borderTopColor: 'red',
-    borderBottomWidth: 2.5,
-    borderTopWidth: 2.5,
+    height: 135,
+    borderColor: 'red',
+    borderBottomWidth: 1,
+    borderTopWidth: 1,
   },
   banner: {
     width: '100%',
-    resizeMode: 'cover',
-    height: 140,
+    resizeMode: 'contain',
+    height: 130,
   },
 });
